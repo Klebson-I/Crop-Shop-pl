@@ -1,0 +1,9 @@
+<h2>Wybierz produkt do usunięcia</h2>
+<form action="/remover?_method=delete" method="post">
+    <select name="list" class="remover__input">
+        {{#each products}}
+            <option value="{{this}}">{{this}}</option>
+        {{/each}}
+    </select>
+    <button type="submit" class="remover__button">Zatwierdź</button>
+</form>

@@ -1,0 +1,22 @@
+<form action="/upload" method="post" enctype="multipart/form-data" class="upload__form">
+
+    <div class="upload__form--singleInput">
+        <label for="file">Załącz zdjęcie</label>
+        <input type="file" accept="image/jpeg image/png" name="file">
+        <p>Uwaga, zdjęcie musi być wykonane w proporcji 2:3 (wysokość:szerokość) np. 800px na 1200px oraz być formatu jpg lub png</p>
+    </div>
+
+    <div class="upload__form--singleInput">
+        <label for="name">Podaj nazwę produktu</label>
+        <input type="text" name="name" >
+    </div>
+
+    <div class="upload__form--singleInput">
+        <label for="price">Podaj cenę produktu za 100g</label>
+        <input type="number" name="price" step="0.01">
+    </div>
+
+    <button type="submit">Stwórz produkt</button>
+</form>
+
+

@@ -1,0 +1,29 @@
+
+
+<main class="productsMain">
+    {{#each products}}
+            {{#if this.amount}}
+                <form class="product__div" method="get" action="/products/{{this.name}}">
+                    <img src="{{this.img}}" alt="">
+                    <h2>{{this.name}}</h2>
+                    <p>Cena : {{this.price}}zł/100g</p>
+                        <button type="submit" class="choseProduct">
+                            <img src="/images/busket-icon.png" alt="">
+                        </button>
+                </form>
+            {{else}}
+                <form class="product__div" action="/products/{{this.name}}" method="get">
+                    <img src="/images/sold-out.png" alt="" class="soldOutImg">
+                    <img src="{{this.img}}" alt="">
+                    <h2>{{this.name}}</h2>
+                    <p>Cena : {{this.price}}zł/100g</p>
+                        <button class="choseProduct" disabled>
+                            <img src="/images/busket-icon.png" alt="">
+                        </button>
+                </form>
+            {{/if}}
+
+    {{/each}}
+</main>
+<!--<div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+ -->

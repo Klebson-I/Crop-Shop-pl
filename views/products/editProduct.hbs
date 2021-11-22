@@ -1,0 +1,24 @@
+
+<div class="singleProductForm">
+    <img src="{{product.img}}" alt="">
+    <form action="/products/{{product.name}}?_method=post" method="POST" class="singleProductForm__form">
+        {{log product.name}}
+        <h2>{{product.name}}</h2>
+
+        <p>Cena : {{product.price}}zł/100g  (max : {{product.maxAmount}} kg)</p>
+
+        <div class="weightInputRangeDiv">
+            <input class="weightInputRange" type="range" step="1" max="{{multiplyAmount product.maxAmount}}" name="weightInput"> g
+        </div>
+
+        <div class="weightInputNumberDiv">
+            <input type="number" class="weightInputNumber"> g
+        </div>
+
+        <a href="/products/{{this.name}}">
+            <button type="submit" class="choseProduct">
+                <img src="/images/busket-icon.png" alt="">
+            </button>
+        </a>
+    </form>
+</div>

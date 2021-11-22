@@ -1,0 +1,38 @@
+<form action="/summary" class="summaryDiv" method="post">
+    <div class="summaryDiv__inputs">
+        <label for="name">Imię</label>
+        <input type="text" id="name" name="name">
+
+        <label for="secondName">Nazwisko</label>
+        <input type="text" id="secondName" name="secondName">
+
+        <label for="city">Miasto</label>
+        <input type="text" name="city" id="city">
+
+        <label for="street">Ulica</label>
+        <input type="text" id="street" name="street">
+
+        <label for="postId">Kod pocztowy</label>
+        <input type="text" name="postId" id="postId">
+
+        <label for="email"> Email</label>
+        <input type="email" id="email" name="email">
+
+        <label for="phone">Numer telefonu</label>
+        <input type="number" name="phone" id="phone">
+    </div>
+
+    <div class="summaryDiv__summary">
+        <h2>Podsumowanie :</h2>
+
+        {{#each strings}}
+            <p>{{this}}</p>
+        {{/each}}
+
+        <p>Wartość całkowita zamówienia : {{price}} zł</p>
+
+        <button type="submit"> Zamawiam </button>
+    </div>
+
+
+</form>

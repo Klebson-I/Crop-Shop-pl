@@ -1,0 +1,57 @@
+<h1>Koszyk</h1>
+<table>
+    <thead>
+    <tr>
+        <th>
+            Produkt
+        </th>
+        <th>
+            Ilość (g)
+        </th>
+        <th>
+            Modyfikacje
+        </th>
+        <th>
+            Cena (zł)
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#each product}}
+        <tr>
+            <th>
+                {{this.name}}
+            </th>
+            <th name="amount">
+                {{this.amount}}
+            </th>
+            <th>
+                <form class="modify__form" action="/basket/{{this.name}}?_method=PUT" method="post">
+                    <button type="submit">
+                        Zmień ilość
+                    </button>
+                </form>
+                <form class="modify__form" action="/basket/{{this.name}}?_method=DELETE" method="post">
+                    <button>
+                        Usuń
+                    </button>
+                </form>
+            </th>
+            <th name="price">
+                {{this.price}}
+            </th>
+
+        </tr>
+    {{/each}}
+    </tbody>
+</table>
+
+{{#if sum}}
+    <form class="summary" action="/summary" method="get">
+        <h3>Całkowita wartość : {{sum}} zł</h3>
+        <button type="submit">Złóż zamówienie</button>
+    </form>
+{{/if}}
+
+<a href="/products" class="basketLinkToProducts">Do produktów</a>
+

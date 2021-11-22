@@ -1,0 +1,27 @@
+
+    <div class="interface__mainDiv">
+        {{#each products}}
+            <div class="interface__mainDiv--div" style="background-color:
+                 {{#if isActual}}
+                     #b5e7b5
+                 {{else}}
+                     white
+                 {{/if}}
+                ">
+                <form class="interface__singleProduct" action="/interface/{{this.name}}" method="get">
+                    <img src="{{this.img}}" alt="" height="auto" width="200px">
+                    <p>{{this.name}}</p>
+                    <p> Cena : {{this.price}} zł/100g</p>
+                    <button type="submit">Dodaj produkt do oferty</button>
+                </form>
+                <form action="/interface/{{this.name}}?_method=delete" method="post" class="interface__singleProduct--delete">
+                    <button type="submit">Usuń</button>
+                </form>
+            </div>
+
+        {{/each}}
+
+    </div>
+    <a href="/upload" class="addNewLink">Dodaj nowy produkt do bazy</a>
+    <a href="/remover" class="addNewLink">Usuń produkt z bazy danych</a>
+
