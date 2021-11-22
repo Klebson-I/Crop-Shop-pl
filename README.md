@@ -1,6 +1,6 @@
 # Crop-Shop-pl
 
-Simple shop prototype writen in JavaScript, using node.js and express.js.
+Simple shop prototype writen in JavaScript, using node.js, express.js and handlebars.
 Main language of app is polish.
 It uses json files as databases.
 
